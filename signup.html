@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - KAU Study Group Finder</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .form-card {
+      max-width: 480px;
+      margin: 0 auto 24px auto;
+    }
+    .form-card h1 {
+      margin-top: 0;
+      border-bottom: 3px solid #f4c542;
+      padding-bottom: 6px;
+    }
+    .form-card label {
+      display: block;
+      margin-top: 14px;
+      font-weight: bold;
+      color: #084c37;
+    }
+    .form-card input,
+    .form-card select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      margin-top: 6px;
+      border: 2px solid #b9d3c6;
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+    }
+    .form-card input:focus,
+    .form-card select:focus {
+      outline: none;
+      box-shadow: 0 0 6px rgba(11, 110, 79, 0.5);
+    }
+    .form-card button {
+      width: 100%;
+      margin-top: 18px;
+      padding: 12px;
+      background: #0b6e4f;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .form-card button:hover {
+      background: #f4c542;
+      color: #084c37;
+    }
+    .error {
+      color: #c0392b;
+      font-size: 13px;
+      min-height: 18px;
+      margin: 4px 0 0 0;
+    }
+    .strength-track {
+      height: 8px;
+      background: #e0e0e0;
+      border-radius: 4px;
+      margin-top: 6px;
+    }
+    #strengthBar {
+      height: 8px;
+      width: 0;
+      border-radius: 4px;
+      background: #c0392b;
+    }
+    #strengthText {
+      font-size: 13px;
+      margin: 4px 0 0 0;
+      min-height: 18px;
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <header class="site-header">
+    <img src="images/logo.png" alt="KAU Study Group Finder logo"
+         width="200" height="100" usemap="#logomap">
+    <map name="logomap">
+      <area shape="rect" coords="0,0,200,100" href="about.html" alt="About Us">
+    </map>
+    <nav>
+      <ul class="main-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content">
+    <form class="card form-card" id="signupForm" novalidate>
+      <h1>Sign Up</h1>
+
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+      <p class="error" id="nameError"></p>
+
+      <label for="email">KAU Email</label>
+      <input type="email" id="email" name="email" placeholder="example@stu.kau.edu.sa">
+      <p class="error" id="emailError"></p>
+
+      <label for="course">Course</label>
+      <select id="course" name="course">
+        <option value="">-- Select a course --</option>
+        <option value="CPIS358">CPIS 358</option>
+        <option value="CPIS354">CPIS 354</option>
+        <option value="CPIS357">CPIS 357</option>
+      </select>
+      <p class="error" id="courseError"></p>
+      <p id="courseInfo" style="display:none;"></p>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="At least 8 characters">
+      <div class="strength-track"><div id="strengthBar"></div></div>
+      <p id="strengthText"></p>
+      <p class="error" id="passwordError"></p>
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password">
+      <p class="error" id="confirmError"></p>
+
+      <button type="submit">Create Account</button>
+
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 KAU Study Group Finder - CPIS358 Assignment 1 |
+       <a href="#top">Back to top</a></p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
